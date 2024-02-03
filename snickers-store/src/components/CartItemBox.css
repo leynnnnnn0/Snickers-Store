@@ -1,0 +1,24 @@
+.cart-item {
+    height: 120px;
+    width: 270px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    display: flex;
+    box-shadow: 1px 1px 10px grey;
+}
+
+.shoes-image {
+    width: 150px;
+    height: 100px;
+    margin-right: 0.5rem;
+}
+
+.cart-item h3 {
+    font-size: 1rem;
+
+}
+
+.remove-button {
+    font-size: 1rem;
+    position: absolute;
+}

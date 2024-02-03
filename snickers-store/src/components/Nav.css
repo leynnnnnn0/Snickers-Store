@@ -1,0 +1,65 @@
+.nav-container {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-shadow: 2px 2px 20px grey;
+}
+
+.nav-container h3 {
+    font-size: 2rem;
+}
+
+.links a{
+    color: black;
+    margin: 2rem;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons .bag-icon  {
+    margin-right: 2rem;
+    font-size: 2rem;
+}
+
+.buttons button {
+    padding: 0.5rem 1.4rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+    background: white;
+}
+
+.search-bar {
+    display: none;
+    align-items: center;
+    
+}
+
+.search-icon {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-weight: bolder;
+}
+
+input {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 5px;
+    text-indent: 0.5rem;
+}
+
+
+@media (max-width: 800px) {
+    .links {
+        display: none;
+    }
+    .search-bar {
+        display: flex;
+    }
+}
+

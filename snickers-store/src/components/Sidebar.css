@@ -1,0 +1,35 @@
+.side-bar {
+    height: 100vh;
+    width: 25%;
+    padding: 5%;
+}
+
+section {
+    margin: 1rem 2%;
+}
+
+.categories-form .choices {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.side-bar  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.side-bar label {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+@media (max-width: 1200px) {
+    .side-bar {
+        width: 15%;
+    }
+}
+
+
+
+
