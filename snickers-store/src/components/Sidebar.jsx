@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 
-const Sidebar = ({manageDisplay}) => {
+const Sidebar = ({ manageDisplay }) => {
 
   return (
     <section>
@@ -10,32 +10,32 @@ const Sidebar = ({manageDisplay}) => {
           <div className="choices">
             <input
               type="radio"
-              id="popular"
+              id="all"
               name="choice"
-              value="Popular"
+              value="all"
               onClick={manageDisplay}
             />
-            <label htmlFor="popular">Popular</label>
+            <label htmlFor="all">All</label>
           </div>
           <div className="choices">
             <input
               type="radio"
-              id="onSale"
+              id="below200"
               name="choice"
-              value="Sale"
+              value="below200"
               onClick={manageDisplay}
             />
-            <label htmlFor="onSale">On Sale</label>
+            <label htmlFor="below200">Below 200</label>
           </div>
           <div className="choices">
             <input
               type="radio"
-              id="bestSellers"
+              id="above200"
               name="choice"
-              value="Best"
+              value="above200"
               onClick={manageDisplay}
             />
-            <label htmlFor="bestSellers">Best Sellers</label>
+            <label htmlFor="above200">Above 200</label>
           </div>
         </form>
       </div>

@@ -30,7 +30,7 @@ const Items = () => {
   const test = (id) => {
     setShowInfo(id);
   }
-  
+
   const itemInfo = shoesData.find((item) => item.id === showInfo);
   // search bar
   const [query, setQuery] = useState("");
@@ -38,8 +38,8 @@ const Items = () => {
     setQuery(e.target.value);
   }
 
+  // Code for searching a product
   const filterByQuery = shoesData.filter(item => item.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1);
-
   const filteredByQuery = filterByQuery.map((item) => {
     return (
       <ItemsBox
@@ -51,14 +51,27 @@ const Items = () => {
       />
     );
   });
-
-
+  // To manage the item that will be displayed
   const [display, setDisplay] = useState("");
   const manageDisplay = (e) => {
     setDisplay(e.target.value);
   }
-  const onSale = shoesData.filter(item => item.price < 200);
-  const displayOnSale = onSale.map(item => {
+  // To disply the items that is below 200
+  const below200 = shoesData.filter(item => item.price < 200);
+  const displayBelow200 = below200.map(item => {
+    return (
+      <ItemsBox
+        id={item.id}
+        key={item.id}
+        image={item.image}
+        name={item.name}
+        price={item.price}
+      />
+    );
+  })
+  // To display the items that is below 200
+  const above200 = shoesData.filter(item => item.price > 200);
+  const displayAbove200 = above200.map(item => {
     return (
       <ItemsBox
         id={item.id}
@@ -70,6 +83,7 @@ const Items = () => {
     );
   })
 
+  // To display all the items 
   const displayShoes = shoesData.map((item) => {
     return (
       <ItemsBox
@@ -83,6 +97,19 @@ const Items = () => {
     );
   });
 
+  // Contorolled Structure for items to show
+  function which() {
+    if (display === "below200") {
+      return displayBelow200
+    } else if (display === "above200") {
+      return displayAbove200
+    } else if (query) {
+      return filteredByQuery
+    } else {
+      return displayShoes
+    }
+  }
+
   return (
     <>
       <div className="items-container">
@@ -92,7 +119,7 @@ const Items = () => {
             <Sidebar manageDisplay={manageDisplay} />
           </span>
           <div className="products-container">
-            {query !== "" ? filteredByQuery : displayShoes}
+            {which()}
           </div>
         </section>
       </div>
