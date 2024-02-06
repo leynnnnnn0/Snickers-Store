@@ -3,7 +3,7 @@ import Nav from "../components/Nav.jsx"
 import shoesData from "../data/shoesData.js"
 import ItemsBox from "../components/ItemsBox.jsx"
 import Sidebar from "../components/Sidebar.jsx"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Info from "../components/Info.jsx"
 import Cart from "../components/Cart.jsx"
 const Items = () => {
@@ -12,6 +12,8 @@ const Items = () => {
   const handleAddItem = (id) => {
     const item = shoesData.find(item => item.id === id);
     setCartItems([...cartItems, item]);
+    alert("Successfully Added!")
+    setShowInfo("")
   }
 
   // remove an item from cart 

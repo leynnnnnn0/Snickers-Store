@@ -12,7 +12,9 @@ const Cart = ({ toggleCartDisplay, cartItems, removeItem}) => {
     <div className="cart-container">
       <div className="cart">
               <TbCircleLetterX className="exit-button" onClick={toggleCartDisplay} />
+              <div className="cart-items-holder">
               {cartItems && displayCartItems}
+              </div>
       </div>
     </div>
   );
